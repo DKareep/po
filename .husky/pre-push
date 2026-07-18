@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+echo ""
+echo "Running pre-push checks to ensure code quality"
+echo ""
+
+echo "Making sure no orphaned files are commited"
+npm run knip || exit 1
+

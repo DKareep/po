@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+echo ""
+echo "Running pre-commit lint and prettier checks to ensure code quality"
+echo ""
+
+npx lint-staged
