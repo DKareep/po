@@ -11,7 +11,7 @@
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
     "knip": "knip",
-    "check": "tsc --noEmit && knip",
+    "check": "prettier --write . && eslint --fix . && knip && tsc --noEmit",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -24,9 +24,13 @@
     ]
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
     "husky": "^9.1.7",
+    "lucide-react": "^1.25.0",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.1",
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",

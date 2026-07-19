@@ -1,0 +1,103 @@
+:root {
+  --app-primary: #fa6400;
+  --app-primary-hover: #ff963e;
+  --app-primary-active: #d95400;
+  --app-primary-soft: #fff1e6;
+
+  --app-accent: #393939;
+  --app-accent-soft: #bebebe;
+
+  --app-text: #232121;
+  --app-text-secondary: #4b4848;
+  --app-text-muted: #7b7b7b;
+  --app-text-inverse: #ffffff;
+
+  --app-bg: #fbfbfb;
+  --app-bg-secondary: #f1f1f1;
+  --app-bg-tertiary: #e6e6e6;
+
+  --app-surface: #ffffff;
+  --app-surface-hover: #fafafa;
+
+  --app-border: #dddddd;
+  --app-border-light: #ececec;
+  --app-border-strong: #c8c8c8;
+
+  --app-success: #16a34a;
+  --app-success-hover: #15803d;
+  --app-success-soft: #dcfce7;
+  --app-success-border: #86efac;
+
+  --app-danger: #dc2626;
+  --app-danger-hover: #b91c1c;
+  --app-danger-soft: #fee2e2;
+  --app-danger-border: #fca5a5;
+
+  --app-warning: #d97706;
+  --app-warning-hover: #b45309;
+  --app-warning-soft: #fef3c7;
+  --app-warning-border: #fcd34d;
+
+  --app-info: #2563eb;
+  --app-info-hover: #1d4ed8;
+  --app-info-soft: #dbeafe;
+  --app-info-border: #93c5fd;
+}
+html.dark {
+  /* Backgrounds */
+
+  --app-bg: #111827; /* Slate 900 */
+  --app-bg-secondary: #1f2937; /* Slate 800 */
+  --app-bg-tertiary: #273449;
+
+  /* Surfaces */
+
+  --app-surface: #1e293b; /* Slate 800 */
+  --app-surface-hover: #293548;
+
+  /* Text */
+
+  --app-text: #f8fafc; /* Slate 50 */
+  --app-text-secondary: #cbd5e1; /* Slate 300 */
+  --app-text-muted: #94a3b8; /* Slate 400 */
+  --app-text-inverse: #0f172a;
+
+  /* Accent */
+
+  --app-accent: #e2e8f0;
+  --app-accent-soft: #94a3b8;
+
+  /* Borders */
+
+  --app-border: #334155;
+  --app-border-light: #475569;
+  --app-border-strong: #64748b;
+
+  /* Success */
+
+  --app-success: #22c55e;
+  --app-success-hover: #16a34a;
+  --app-success-soft: #052e16;
+  --app-success-border: #166534;
+
+  /* Danger */
+
+  --app-danger: #ef4444;
+  --app-danger-hover: #dc2626;
+  --app-danger-soft: #450a0a;
+  --app-danger-border: #7f1d1d;
+
+  /* Warning */
+
+  --app-warning: #f59e0b;
+  --app-warning-hover: #d97706;
+  --app-warning-soft: #451a03;
+  --app-warning-border: #92400e;
+
+  /* Info */
+
+  --app-info: #3b82f6;
+  --app-info-hover: #2563eb;
+  --app-info-soft: #172554;
+  --app-info-border: #1d4ed8;
+}

@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+@import './theme.css';
+
+@theme inline {
+  --color-primary: var(--app-primary);
+  --color-primary-hover: var(--app-primary-hover);
+  --color-primary-active: var(--app-primary-active);
+  --color-primary-soft: var(--app-primary-soft);
+
+  --color-accent: var(--app-accent);
+  --color-accent-soft: var(--app-accent-soft);
+
+  --color-bg: var(--app-bg);
+  --color-bg-secondary: var(--app-bg-secondary);
+  --color-bg-tertiary: var(--app-bg-tertiary);
+
+  --color-surface: var(--app-surface);
+  --color-surface-hover: var(--app-surface-hover);
+
+  --color-text: var(--app-text);
+  --color-text-secondary: var(--app-text-secondary);
+  --color-text-muted: var(--app-text-muted);
+  --color-text-inverse: var(--app-text-inverse);
+
+  --color-border: var(--app-border);
+  --color-border-light: var(--app-border-light);
+  --color-border-strong: var(--app-border-strong);
+
+  --color-success: var(--app-success);
+  --color-success-hover: var(--app-success-hover);
+  --color-success-soft: var(--app-success-soft);
+  --color-success-border: var(--app-success-border);
+
+  --color-danger: var(--app-danger);
+  --color-danger-hover: var(--app-danger-hover);
+  --color-danger-soft: var(--app-danger-soft);
+  --color-danger-border: var(--app-danger-border);
+
+  --color-warning: var(--app-warning);
+  --color-warning-hover: var(--app-warning-hover);
+  --color-warning-soft: var(--app-warning-soft);
+  --color-warning-border: var(--app-warning-border);
+
+  --color-info: var(--app-info);
+  --color-info-hover: var(--app-info-hover);
+  --color-info-soft: var(--app-info-soft);
+  --color-info-border: var(--app-info-border);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--app-bg);
+  color: var(--app-text);
+}

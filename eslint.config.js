@@ -15,6 +15,7 @@ export default defineConfig([
     },
     rules: {
       'prettier/prettier': 'error',
+      'react-refresh/only-export-components': 'off',
     },
     files: ['**/*.{ts,tsx}'],
     extends: [
