@@ -10,7 +10,7 @@ npm install
 
 ### 2. Environment variables
 
-This app reads config from `.env.development`, which is gitignored and not committed. Create it yourself in the `po/` directory with the following contents:
+This app reads config from `.env.development`, which is gitignored and not committed. Create it `.env.development` file yourself in the `po/` directory with the following contents:
 
 ```sh
 VITE_API_URL="https://po-be.onrender.com/api"
