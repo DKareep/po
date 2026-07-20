@@ -31,7 +31,7 @@ export function getOrderColumns({
         const destType = dest ? dest.type : ''
         return (
           <div className="flex flex-col py-1">
-            <span className="text-[10px] font-semibold text-text-muted font-mono tracking-wider uppercase mb-0.5">
+            <span className="text-[10px] font-semibold text-text-muted  tracking-wider uppercase mb-0.5">
               {order.id}
             </span>
             <span className="font-medium text-text text-sm leading-tight">
@@ -104,14 +104,16 @@ export function getOrderColumns({
         const status = info.getValue()
         let badgeColor = 'bg-bg-secondary text-text-secondary border-border'
         if (status === 'assigned') {
-          badgeColor = 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+          badgeColor = 'bg-info-soft text-info border-info-border'
         }
         if (status === 'completed') {
-          badgeColor =
-            'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+          badgeColor = 'bg-success-soft text-success border-success-border'
         }
         if (status === 'failed') {
-          badgeColor = 'bg-red-500/10 text-red-400 border-red-500/20'
+          badgeColor = 'bg-danger-soft text-danger border-danger-border'
+        }
+        if (status === 'pending') {
+          badgeColor = 'bg-warning-soft text-warning border-warning-border'
         }
 
         return (

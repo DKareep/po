@@ -21,3 +21,7 @@ export const productKeys = {
 export const orderKeys = {
   all: ['orders'] as const,
 }
+
+export const allocationKeys = {
+  all: ['allocations'] as const,
+}

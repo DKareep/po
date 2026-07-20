@@ -141,7 +141,7 @@ export function DeliveryList({ orders }: DeliveryListProps) {
                       Quantity
                     </div>
                     <div className="font-bold text-primary mt-0.5">
-                      {order.quantity.toLocaleString()} gal
+                      {order.quantity.toLocaleString()} L
                     </div>
                   </div>
                 </div>

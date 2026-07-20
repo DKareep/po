@@ -1,3 +1,60 @@
+# Fleet Panda (po)
+
+## Getting started
+
+### 1. Install dependencies
+
+```sh
+npm install
+```
+
+### 2. Environment variables
+
+This app reads config from `.env.development`, which is gitignored and not committed. Create it yourself in the `po/` directory with the following contents:
+
+```sh
+VITE_API_URL="https://po-be.onrender.com/api"
+VITE_MAPBOX_TOKEN=pk.eyJ1IjoiZGlqaW5rcyIsImEiOiJjbXJzbTY0ZWg0ank3MnlzZGlrY3J1ejRiIn0.wUY2Hhw4Mpr3l3nHnqJjZQ
+```
+
+### 3. Run the app
+
+```sh
+npm run dev
+```
+
+This starts Vite's dev server (default: http://localhost:5173). `VITE_API_URL` should point at a running instance of `po-backend`.
+
+## Running tests
+
+### Unit / component tests (Jest)
+
+```sh
+npm run test            # run once
+npm run test:watch      # watch mode
+npm run test:coverage   # with coverage report
+```
+
+### End-to-end tests (Playwright)
+
+```sh
+npm run test:e2e         # run once (auto-starts the dev server)
+npm run test:e2e:ui      # interactive UI mode
+npm run test:e2e:report  # view the last HTML report
+```
+
+E2E tests mock all API calls via `page.route`, so `po-backend` does not need to be running.
+
+## Other useful scripts
+
+```sh
+npm run lint           # ESLint
+npm run format:check   # Prettier check
+npm run format:write   # Prettier write
+npm run check          # format + lint --fix + knip + tsc --noEmit
+npm run build          # type-check and build for production
+```
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

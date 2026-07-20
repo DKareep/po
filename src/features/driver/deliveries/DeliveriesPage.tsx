@@ -64,8 +64,8 @@ export default function DeliveriesPage() {
               Delivery Completed!
             </span>
             <span className="text-xs text-text-secondary">
-              {hubName} stock updated: {newStock?.toLocaleString() || '--'} gal
-              of {product.toLowerCase()}
+              {hubName} stock updated: {newStock?.toLocaleString() || '--'} L of{' '}
+              {product.toLowerCase()}
             </span>
           </div>,
           { duration: 5000 },
@@ -190,7 +190,7 @@ export default function DeliveriesPage() {
   const isShiftEnded = data.shift?.status === 'ended'
 
   return (
-    <div className="space-y-8 max-w-7xl mx-auto">
+    <div className="space-y-6">
       {/* Header View */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-border pb-6">
         <div>
@@ -341,7 +341,7 @@ export default function DeliveriesPage() {
                         Quantity
                       </div>
                       <div className="font-extrabold text-primary mt-1">
-                        {order.quantity.toLocaleString()} gal
+                        {order.quantity.toLocaleString()} L
                       </div>
                     </div>
                   </div>

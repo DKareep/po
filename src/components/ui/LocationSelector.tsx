@@ -277,7 +277,11 @@ export function LocationSelector() {
 
       {/* Interactive Map */}
       <div className="relative rounded-md border border-border overflow-hidden shadow-inner bg-bg-secondary">
-        <div ref={mapContainerRef} className="h-64 w-full" />
+        <div
+          ref={mapContainerRef}
+          data-testid="location-map"
+          className="h-64 w-full"
+        />
         <div className="absolute top-3 left-3 bg-surface/90 backdrop-blur px-3 py-1.5 rounded-md border border-border text-xs font-medium text-text-secondary pointer-events-none select-none flex items-center gap-1.5 shadow-sm">
           <MapPin size={14} className="text-primary" />
           Drag marker or click map to adjust position

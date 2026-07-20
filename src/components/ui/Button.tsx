@@ -17,7 +17,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const base =
-  'inline-flex items-center justify-center gap-2 font-medium rounded-md ' +
+  'items-center justify-center gap-2 font-medium rounded-md cursor-pointer ' +
   'transition-colors duration-150 select-none whitespace-nowrap ' +
   'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ' +
   'focus-visible:ring-offset-bg disabled:cursor-not-allowed disabled:opacity-60'
@@ -65,8 +65,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) {
     const isDisabled = disabled || loading
+    const hasDisplayClass = /\b(hidden|flex|block|grid|inline)\b/.test(
+      className,
+    )
 
     const classes = [
+      hasDisplayClass ? '' : 'inline-flex',
       base,
       variants[variant],
       sizes[size],

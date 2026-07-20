@@ -1,6 +1,6 @@
 import { useAuthStore } from './auth.store'
 
-// export const useAuthUser = () => useAuthStore((s) => s.user)
+export const useAuthUser = () => useAuthStore((s) => s.user)
 
 export const useAuthenticated = () => useAuthStore((s) => s.user !== null)
 

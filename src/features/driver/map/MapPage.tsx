@@ -66,7 +66,9 @@ export default function MapPage() {
   }, [currentRouteStep])
 
   // Simulation variables
-  const autoDriveIntervalRef = useRef<NodeJS.Timeout | null>(null)
+  const autoDriveIntervalRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  )
 
   // Refs to ensure initialization runs exactly once
   const isLocationInitializedRef = useRef(false)
@@ -247,21 +249,21 @@ export default function MapPage() {
       markerEl.appendChild(innerEl)
 
       const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(`
-        <div class="p-2 font-sans text-[#1e293b]">
-          <div class="font-bold text-[9px] uppercase tracking-wider text-[#64748b] mb-1">Stop #${index + 1}</div>
-          <h4 class="font-extrabold text-sm text-[#0f172a] mb-0.5">${order.destinationDetails.name}</h4>
-          <p class="text-xs text-[#475569] leading-tight mb-2">${order.destinationDetails.address}</p>
+        <div class="p-2 font-sans text-text">
+          <div class="font-bold text-[9px] uppercase tracking-wider text-text-muted mb-1">Stop #${index + 1}</div>
+          <h4 class="font-extrabold text-sm text-text mb-0.5">${order.destinationDetails.name}</h4>
+          <p class="text-xs text-text-secondary leading-tight mb-2">${order.destinationDetails.address}</p>
           <div class="flex items-center gap-2">
-            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase ${
+            <span class="px-2 py-0.5 rounded border text-[10px] font-bold uppercase ${
               order.status === 'completed'
-                ? 'bg-emerald-100 text-emerald-800 border border-emerald-200'
+                ? 'bg-success-soft text-success border-success-border/30'
                 : order.status === 'failed'
-                  ? 'bg-rose-100 text-rose-800 border border-rose-200'
-                  : 'bg-amber-100 text-amber-800 border border-amber-200' // yellow warning status badge for pending
+                  ? 'bg-danger-soft text-danger border-danger-border/30'
+                  : 'bg-warning-soft text-warning border-warning-border/30' // yellow warning status badge for pending
             }">
               ${order.status === 'assigned' ? 'pending' : order.status}
             </span>
-            <span class="text-xs font-semibold text-[#475569]">
+            <span class="text-xs font-semibold text-text-secondary">
               ${order.quantity}L ${order.product.toUpperCase()}
             </span>
           </div>
@@ -413,7 +415,7 @@ export default function MapPage() {
           'line-cap': 'round',
         },
         paint: {
-          'line-color': '#3b82f6', // primary blue
+          'line-color': '#fa6400', // primary orange brand color
           'line-width': 8,
           'line-opacity': 0.3,
         },
@@ -429,7 +431,7 @@ export default function MapPage() {
           'line-cap': 'round',
         },
         paint: {
-          'line-color': '#60a5fa', // lighter neon blue
+          'line-color': '#ff963e', // lighter neon orange brand color
           'line-width': 4,
           'line-opacity': 0.85,
           'line-dasharray': [1.5, 2],
@@ -664,7 +666,7 @@ export default function MapPage() {
             Simulated GPS Position
           </h3>
 
-          <div className="grid grid-cols-2 gap-3 text-xs bg-bg-secondary p-3 rounded-lg border border-border/50 font-mono">
+          <div className="grid grid-cols-2 gap-3 text-xs bg-bg-secondary p-3 rounded-lg border border-border/50 ">
             <div>
               <span className="text-text-muted text-[10px] uppercase">
                 Longitude
@@ -726,7 +728,7 @@ export default function MapPage() {
               How to simulate movement:
             </span>
             <ul className="list-disc list-inside space-y-1 mt-1.5 pl-0.5 text-text-muted">
-              <li>Drag the blue truck marker on the map manually.</li>
+              <li>Drag the orange truck marker on the map manually.</li>
               <li>Or click "Start Auto-Drive" to drive dynamically.</li>
             </ul>
           </div>

@@ -164,6 +164,15 @@ export default function InventoryPage() {
 
   return (
     <div className="space-y-6">
+      <div>
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-text">
+          Inventory
+        </h1>
+        <p className="text-sm text-text-muted mt-1.5">
+          Monitor and manage fuel stock levels across hubs and terminals.
+        </p>
+      </div>
+
       <InventorySummary aggregates={aggregates} />
       <InventoryFilters />
 

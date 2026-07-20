@@ -18,7 +18,13 @@ const LoginPage = lazy(
 
 const loading = (
   <ErrorBoundary>
-    <Suspense fallback={<Spinner label="Loading..." />}>
+    <Suspense
+      fallback={
+        <div className="flex h-screen w-screen items-center justify-center">
+          <Spinner label="Loading..." />
+        </div>
+      }
+    >
       <LoginPage />
     </Suspense>
   </ErrorBoundary>
@@ -51,7 +57,13 @@ export const router = createBrowserRouter([
 
           element: (
             <ErrorBoundary>
-              <Suspense fallback={<Spinner label="Loading..." />}>
+              <Suspense
+                fallback={
+                  <div className="flex h-screen w-screen items-center justify-center">
+                    <Spinner label="Loading..." />
+                  </div>
+                }
+              >
                 <Shell variant={route.variant} />
               </Suspense>
             </ErrorBoundary>

@@ -48,7 +48,15 @@ export default function HubsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-text">
+            Hubs
+          </h1>
+          <p className="text-sm text-text-muted mt-1.5">
+            Manage hub locations and their fuel inventory.
+          </p>
+        </div>
         <Button onClick={() => setCreateModalOpen(true)}>Create Hub</Button>
       </div>
       <HubFilters />

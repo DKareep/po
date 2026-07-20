@@ -47,19 +47,23 @@ export function RecentOrdersTable({
                 let badgeColor =
                   'bg-bg-secondary text-text-secondary border-border'
                 if (order.status === 'assigned') {
-                  badgeColor = 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+                  badgeColor = 'bg-info-soft text-info border-info-border'
                 }
                 if (order.status === 'completed') {
                   badgeColor =
-                    'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                    'bg-success-soft text-success border-success-border'
                 }
                 if (order.status === 'failed') {
-                  badgeColor = 'bg-red-500/10 text-red-400 border-red-500/20'
+                  badgeColor = 'bg-danger-soft text-danger border-danger-border'
+                }
+                if (order.status === 'pending') {
+                  badgeColor =
+                    'bg-warning-soft text-warning border-warning-border'
                 }
 
                 return (
                   <tr key={order.id} className="hover:bg-surface-hover">
-                    <td className="py-3 px-4 font-medium font-mono text-xs text-text">
+                    <td className="py-3 px-4 font-medium  text-xs text-text">
                       {order.id}
                     </td>
                     <td className="py-3 px-4 text-text font-medium">

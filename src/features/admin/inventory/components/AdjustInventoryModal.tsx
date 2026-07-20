@@ -18,13 +18,13 @@ interface AdjustInventoryModalProps {
 
 const adjustSchema = z.object({
   diesel: z
-    .number({ errorMap: () => ({ message: 'Diesel volume is required' }) })
+    .number({ message: 'Diesel volume is required' })
     .min(0, 'Volume cannot be negative'),
   petrol: z
-    .number({ errorMap: () => ({ message: 'Petrol volume is required' }) })
+    .number({ message: 'Petrol volume is required' })
     .min(0, 'Volume cannot be negative'),
   jet_a1: z
-    .number({ errorMap: () => ({ message: 'Jet A-1 volume is required' }) })
+    .number({ message: 'Jet A-1 volume is required' })
     .min(0, 'Volume cannot be negative'),
 })
 

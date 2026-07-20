@@ -3,6 +3,7 @@ import { LogOut, Moon, Sun } from 'lucide-react'
 import { Button } from '@/components/ui'
 import { useTheme } from '@/context/theme/ThemeContext.ts'
 import { useLogout } from '@/features/auth/logout/hooks/useLogout'
+import { useAuthUser } from '@/stores/auth'
 
 function ThemeToggle() {
   const { theme, toggleTheme } = useTheme()
@@ -64,21 +65,19 @@ function LogoutIconButton() {
 }
 
 const Header = () => {
+  const user = useAuthUser()
+
   return (
     <header
       role="banner"
-      className="sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-border bg-surface/80 px-4 py-3 backdrop-blur sm:px-6"
+      className="sticky top-0 z-30 flex h-16 items-center justify-between gap-3 border-b border-border bg-surface/80 px-4 backdrop-blur sm:px-6"
     >
-      <div className="flex items-center gap-2 min-w-0">
-        <span
-          aria-hidden="true"
-          className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary text-text-inverse font-bold"
-        >
-          FP
-        </span>
-        <span className="truncate text-base font-semibold text-text sm:text-lg">
-          Fleet Panda
-        </span>
+      <div className="flex items-center gap-2 min-w-0 pl-12 lg:pl-0">
+        {user && (
+          <span className="truncate text-sm font-medium text-text-secondary sm:text-base">
+            {user.name} • {user.role === 'admin' ? '(Admin)' : '(Driver)'}
+          </span>
+        )}
       </div>
 
       <nav

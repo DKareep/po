@@ -45,8 +45,16 @@ const Sidebar = ({ variant }: Props) => {
         }`}
         aria-label="Primary navigation"
       >
-        <div className="flex h-16 items-center border-b border-border px-6">
-          <span className="text-lg font-semibold text-text">Fleet Panda</span>
+        <div className="flex h-16 items-center gap-2 border-b border-border px-6">
+          <span
+            aria-hidden="true"
+            className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary text-text-inverse font-bold"
+          >
+            FP
+          </span>
+          <span className="truncate text-base font-semibold text-text sm:text-lg">
+            Fleet Panda
+          </span>
         </div>
 
         <nav className="flex-1 space-y-1 overflow-y-auto p-3">

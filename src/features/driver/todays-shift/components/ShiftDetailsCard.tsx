@@ -74,7 +74,7 @@ export function ShiftDetailsCard({
                   <div className="text-sm text-text-secondary">
                     Capacity:{' '}
                     <span className="font-medium">
-                      {vehicle.capacity.toLocaleString()} gallons
+                      {vehicle.capacity.toLocaleString()} liters
                     </span>
                   </div>
                 </div>

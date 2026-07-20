@@ -48,7 +48,15 @@ export default function ProductPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-end">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-text">
+            Products
+          </h1>
+          <p className="text-sm text-text-muted mt-1.5">
+            Manage the fuel products available across the fleet.
+          </p>
+        </div>
         <Button onClick={() => setCreateModalOpen(true)}>Create Product</Button>
       </div>
       <ProductFilters />

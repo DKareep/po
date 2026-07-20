@@ -170,6 +170,15 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-6">
+      <div>
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-text">
+          Dashboard
+        </h1>
+        <p className="text-sm text-text-muted mt-1.5">
+          Overview of fleet operations, orders, and inventory status.
+        </p>
+      </div>
+
       <DashboardStats stats={stats} />
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">

@@ -57,9 +57,7 @@ export function getInventoryColumns({ onAdjustStock }: InventoryTableProps) {
     return (
       <div className="flex w-full flex-col py-1">
         <div className="flex items-center justify-between text-xs font-semibold mb-1">
-          <span className="text-text font-mono">
-            {volume.toLocaleString()} L
-          </span>
+          <span className="text-text ">{volume.toLocaleString()} L</span>
           <span
             className={`px-1.5 py-0.5 rounded text-[10px] uppercase tracking-wider ${status.bgColor} ${status.textColor}`}
           >
