@@ -55,7 +55,7 @@ test.describe('Driver - Deliveries', () => {
 
     await expect(page.getByText('Order #123')).toBeVisible()
     await expect(page.getByText('Downtown Hub')).toBeVisible()
-    await expect(page.getByText('5,000 gal')).toBeVisible()
+    await expect(page.getByText('5,000 L')).toBeVisible()
   })
 
   test('completes a delivery and shows the updated stock', async ({ page }) => {

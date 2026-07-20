@@ -98,10 +98,13 @@ jobs:
           # `new mapboxgl.Map()` on mount, which throws synchronously if
           # `mapboxgl.accessToken` is empty - crashing the surrounding
           # ErrorBoundary and wiping out whatever UI the test expects to find.
-          # Tests block all real Mapbox network calls via `mockMapbox()`, so
-          # this just needs to be non-empty - it never has to be a live,
-          # authorized token.
-          VITE_MAPBOX_TOKEN: ${{ secrets.VITE_MAPBOX_TOKEN }}
+          # Tests block all real Mapbox network calls via `mockMapbox()`
+          # (tests/support/mapbox.ts), so this never needs to be a live,
+          # authorized token - just non-empty. Hardcoded rather than sourced
+          # from a repo secret so there's nothing to misconfigure in GitHub
+          # (wrong tab, wrong scope, name mismatch, etc.) for a value that
+          # was never sensitive to begin with.
+          VITE_MAPBOX_TOKEN: 'pk.eyJ1IjoiZGlqaW5rcyIsImEiOiJjbXJzbTY0ZWg0ank3MnlzZGlrY3J1ejRiIn0.wUY2Hhw4Mpr3l3nHnqJjZQ'
 
       - name: Upload Playwright report
         if: always()
