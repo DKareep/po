@@ -21,15 +21,17 @@ const Sidebar = ({ variant }: Props) => {
 
   return (
     <>
-      <button
-        type="button"
-        aria-label={open ? 'Close navigation' : 'Open navigation'}
-        aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
-        className="fixed top-3 left-3 z-50 inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-surface text-text shadow-sm lg:hidden"
-      >
-        {open ? <X size={20} /> : <Menu size={20} />}
-      </button>
+      {!open && (
+        <button
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded={open}
+          onClick={() => setOpen(true)}
+          className="fixed top-3 left-3 z-50 inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-surface text-text shadow-sm lg:hidden"
+        >
+          <Menu size={20} />
+        </button>
+      )}
 
       {open && (
         <div
@@ -45,16 +47,26 @@ const Sidebar = ({ variant }: Props) => {
         }`}
         aria-label="Primary navigation"
       >
-        <div className="flex h-16 items-center gap-2 border-b border-border px-6">
-          <span
-            aria-hidden="true"
-            className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary text-text-inverse font-bold"
+        <div className="flex h-16 items-center justify-between gap-2 border-b border-border px-4 lg:px-6">
+          <div className="flex min-w-0 items-center gap-2">
+            <span
+              aria-hidden="true"
+              className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary text-text-inverse font-bold"
+            >
+              FP
+            </span>
+            <span className="truncate text-base font-semibold text-text sm:text-lg">
+              Fleet Panda
+            </span>
+          </div>
+          <button
+            type="button"
+            aria-label="Close navigation"
+            onClick={close}
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-text-secondary hover:bg-surface-hover lg:hidden"
           >
-            FP
-          </span>
-          <span className="truncate text-base font-semibold text-text sm:text-lg">
-            Fleet Panda
-          </span>
+            <X size={20} />
+          </button>
         </div>
 
         <nav className="flex-1 space-y-1 overflow-y-auto p-3">

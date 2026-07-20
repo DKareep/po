@@ -38,7 +38,27 @@ const DRIVER_USER: LoginUser = {
   name: 'John Doe',
 }
 
+function logBrowserErrors(page: Page) {
+  if (!process.env.CI) return
+
+  page.on('console', (msg) => {
+    if (msg.type() === 'error' || msg.type() === 'warning') {
+      console.log(`[browser:${msg.type()}] ${msg.text()}`)
+    }
+  })
+  page.on('pageerror', (err) => {
+    console.log(`[browser:uncaught] ${err.stack || err.message}`)
+  })
+  page.on('requestfailed', (req) => {
+    console.log(
+      `[browser:requestfailed] ${req.method()} ${req.url()} - ${req.failure()?.errorText}`,
+    )
+  })
+}
+
 async function seedAuth(page: Page, user: LoginUser, token: string) {
+  logBrowserErrors(page)
+
   await page.addInitScript(
     ({ user, token }: { user: LoginUser; token: string }) => {
       window.localStorage.setItem('access_token', token)
