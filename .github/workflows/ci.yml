@@ -93,6 +93,15 @@ jobs:
 
       - name: Run Playwright tests
         run: npm run test:e2e
+        env:
+          # `LocationSelector`, `LiveFleetMap`, and the driver `MapPage` call
+          # `new mapboxgl.Map()` on mount, which throws synchronously if
+          # `mapboxgl.accessToken` is empty - crashing the surrounding
+          # ErrorBoundary and wiping out whatever UI the test expects to find.
+          # Tests block all real Mapbox network calls via `mockMapbox()`, so
+          # this just needs to be non-empty - it never has to be a live,
+          # authorized token.
+          VITE_MAPBOX_TOKEN: ${{ secrets.VITE_MAPBOX_TOKEN }}
 
       - name: Upload Playwright report
         if: always()
