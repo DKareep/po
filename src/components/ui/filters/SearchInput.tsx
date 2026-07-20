@@ -27,7 +27,7 @@ export function SearchInput({
 
   useEffect(() => {
     filters.set(param, debouncedValue)
-  }, [debouncedValue])
+  }, [debouncedValue, filters, param])
 
   return (
     <input

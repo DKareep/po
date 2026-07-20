@@ -40,13 +40,7 @@ export function DataTable<TData>({
     if (lastVirtualIndex < rows.length - 1) return
 
     infiniteScroll.fetchNextPage?.()
-  }, [
-    lastVirtualIndex,
-    rows.length,
-    infiniteScroll?.hasNextPage,
-    infiniteScroll?.isFetchingNextPage,
-    infiniteScroll?.fetchNextPage,
-  ])
+  }, [lastVirtualIndex, rows.length, infiniteScroll])
 
   const showEmpty = !isLoading && rows.length === 0
   const columnCount = table.getVisibleLeafColumns().length
