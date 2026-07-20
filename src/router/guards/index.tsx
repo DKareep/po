@@ -1,16 +1,9 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom'
 
+import { useAuthenticated, useUserRole } from '@/stores/auth'
 import type { Role } from '@/types'
 
-// const auhtTest = {
-//   isAuthed: true,
-//   role: 'admin',
-// }
-const auhtTest = {
-  isAuthed: true,
-  role: 'admin',
-}
-function roleHome(role: string) {
+function roleHome(role: Role | null) {
   switch (role) {
     case 'admin':
       return '/admin'
@@ -24,10 +17,10 @@ function roleHome(role: string) {
 }
 
 export function ProtectedRoute() {
-  const { isAuthed } = auhtTest
+  const authenticated = useAuthenticated()
   const location = useLocation()
 
-  if (!isAuthed) {
+  if (!authenticated) {
     return <Navigate to="/login" replace state={{ from: location.pathname }} />
   }
 
@@ -39,7 +32,7 @@ interface RoleRouteProps {
 }
 
 export function RoleRoute({ role }: RoleRouteProps) {
-  const { role: userRole } = auhtTest
+  const userRole = useUserRole()
 
   if (userRole !== role) {
     return <Navigate to={roleHome(userRole)} replace />

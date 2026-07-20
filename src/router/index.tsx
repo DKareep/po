@@ -9,7 +9,12 @@ import Shell from '@/components/layout/Shell'
 import { ErrorBoundary } from '@/components/layout/ErrorBoundary'
 import { Spinner } from '@/components/ui'
 
-const LoginPage = lazy(() => import('@/features/auth/login/LoginPage.tsx'))
+import AdminLogin from '@/features/auth/login/pages/AdminLogin.tsx'
+import DriverLogin from '@/features/auth/login/pages/DriverLogin.tsx'
+
+const LoginPage = lazy(
+  () => import('@/features/auth/login/pages/LoginType.tsx'),
+)
 
 const loading = (
   <ErrorBoundary>
@@ -23,6 +28,15 @@ export const router = createBrowserRouter([
   {
     path: '/login',
     element: loading,
+  },
+  {
+    path: '/login/admin',
+    element: <AdminLogin />,
+  },
+
+  {
+    path: '/login/driver',
+    element: <DriverLogin />,
   },
 
   {

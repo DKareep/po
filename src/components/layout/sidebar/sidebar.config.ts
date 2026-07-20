@@ -29,6 +29,11 @@ export const adminNavigation: NavigationItem[] = [
     icon: LayoutDashboard,
   },
   {
+    title: 'Inventory',
+    to: '/admin/inventory',
+    icon: Boxes,
+  },
+  {
     title: 'Operations',
     children: [
       {
@@ -48,11 +53,7 @@ export const adminNavigation: NavigationItem[] = [
       },
     ],
   },
-  {
-    title: 'Inventory',
-    to: '/admin/inventory',
-    icon: Boxes,
-  },
+
   {
     title: 'Resources',
     children: [

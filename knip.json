@@ -1,8 +1,4 @@
 {
-  "ignore": [
-    "src/components/ui/index.ts",
-    "src/components/ui/Input.tsx",
-    "src/components/ui/Modal.tsx"
-  ],
+  "ignore": ["src/components/ui/filters/DateFilter.tsx"],
   "ignoreDependencies": [""]
 }
