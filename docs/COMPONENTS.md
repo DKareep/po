@@ -1,6 +1,6 @@
 # Component Architecture
 
-This document describes how the Fleet Panda frontend is composed: the shell that every screen renders inside, the shared UI primitives, and the conventions used inside feature modules. It reflects the code as it exists in `src/`, not an aspirational target.
+This document describes how the Fleeter frontend is composed: the shell that every screen renders inside, the shared UI primitives, and the conventions used inside feature modules. It reflects the code as it exists in `src/`, not an aspirational target.
 
 ## Layering
 

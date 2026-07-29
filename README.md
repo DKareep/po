@@ -1,4 +1,4 @@
-# Fleet Panda (po)
+# Fleeter (po)
 
 ## Getting started
 

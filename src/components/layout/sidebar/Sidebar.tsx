@@ -53,10 +53,10 @@ const Sidebar = ({ variant }: Props) => {
               aria-hidden="true"
               className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary text-text-inverse font-bold"
             >
-              FP
+              F
             </span>
             <span className="truncate text-base font-semibold text-text sm:text-lg">
-              Fleet Panda
+              Fleeter
             </span>
           </div>
           <button

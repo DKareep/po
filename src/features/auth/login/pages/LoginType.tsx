@@ -6,10 +6,10 @@ import truckConvoy from '@/assets/truck.webp'
 import { LoginCard } from '../components/LoginCard'
 
 // Stylized Logo Component with a light variation for dark backgrounds
-function FleetPandaLogo({ light = false }: { light?: boolean }) {
+function FleeterLogo({ light = false }: { light?: boolean }) {
   return (
     <div className="flex items-center gap-3">
-      {/* Panda inside a truck stylized icon */}
+      {/* Truck stylized icon */}
       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-text-inverse shadow-md shadow-primary/10">
         <svg
           className="w-7 h-7"
@@ -25,14 +25,11 @@ function FleetPandaLogo({ light = false }: { light?: boolean }) {
           {/* Wheels */}
           <circle cx="7.5" cy="18.5" r="2.5" />
           <circle cx="16.5" cy="18.5" r="2.5" />
-          {/* Panda face outline inside box */}
-          <circle cx="9" cy="11" r="2" />
         </svg>
       </div>
       <div className="flex flex-col">
         <div className="flex items-baseline font-extrabold tracking-tight text-xl leading-none">
-          <span className={light ? 'text-white' : 'text-text'}>Fleet</span>
-          <span className="text-primary ml-0.5">Panda</span>
+          <span className={light ? 'text-white' : 'text-text'}>Fleeter</span>
         </div>
         <span
           className={`text-[9px] font-bold uppercase tracking-widest mt-0.5 leading-none ${light ? 'text-neutral-400' : 'text-text-muted'}`}
@@ -85,7 +82,7 @@ export default function LoginType() {
         {/* Logo and welcome text placed over the image */}
         <div className="relative z-20 flex flex-col justify-between h-full">
           <div>
-            <FleetPandaLogo light />
+            <FleeterLogo light />
           </div>
 
           <div className="mt-auto text-white">
@@ -93,7 +90,7 @@ export default function LoginType() {
               Welcome to
             </p>
             <h1 className="text-5xl font-black tracking-tight text-primary mt-1 drop-shadow-sm">
-              Fleet Panda
+              Fleeter
             </h1>
             <p className="mt-5 max-w-sm text-base leading-relaxed text-neutral-200 drop-shadow-sm">
               Smart fuel logistics and fleet management, all in one place.
@@ -106,7 +103,7 @@ export default function LoginType() {
       <section className="flex-1 flex flex-col justify-between p-8 md:p-16 lg:p-24 bg-surface">
         {/* Mobile Logo Header */}
         <div className="lg:hidden mb-12">
-          <FleetPandaLogo />
+          <FleeterLogo />
         </div>
 
         {/* Dummy spacer for flex layout on desktop */}
@@ -161,7 +158,7 @@ export default function LoginType() {
             </div>
 
             <p className="text-xs text-text-muted/80">
-              &copy; 2026 Fleet Panda. All rights reserved.
+              &copy; 2026 Fleeter. All rights reserved.
             </p>
           </div>
         </div>
